@@ -7,9 +7,9 @@ typedef KeyboardTapCallback = void Function(String text);
 class NumericKeyboard extends StatefulWidget {
   final TextStyle textStyle;
   final Padding padding;
-  final Icon rightIcon;
+  final Widget rightButton;
   final Function() rightButtonFn;
-  final Icon leftIcon;
+  final Widget leftButton;
   final Function() leftButtonFn;
   final KeyboardTapCallback onKeyboardTap;
   final MainAxisAlignment mainAxisAlignment;
@@ -20,9 +20,9 @@ class NumericKeyboard extends StatefulWidget {
       this.padding,
       this.textStyle,
       this.rightButtonFn,
-      this.rightIcon,
+      this.rightButton,
       this.leftButtonFn,
-      this.leftIcon,
+      this.leftButton,
       this.mainAxisAlignment = MainAxisAlignment.spaceEvenly})
       : super(key: key);
 
@@ -74,7 +74,7 @@ class _NumericKeyboardState extends State<NumericKeyboard> {
                       alignment: Alignment.center,
                       width: 50,
                       height: 50,
-                      child: widget.leftIcon)),
+                      child: widget.leftButton)),
               _calcButton('0'),
               InkWell(
                   borderRadius: BorderRadius.circular(45),
@@ -83,7 +83,7 @@ class _NumericKeyboardState extends State<NumericKeyboard> {
                       alignment: Alignment.center,
                       width: 50,
                       height: 50,
-                      child: widget.rightIcon))
+                      child: widget.rightButton))
             ],
           ),
         ],

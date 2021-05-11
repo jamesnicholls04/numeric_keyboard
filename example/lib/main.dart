@@ -41,20 +41,19 @@ class _MyHomePageState extends State<MyHomePage> {
           Text(text),
           NumericKeyboard(
             onKeyboardTap: _onKeyboardTap,
-            textColor: Colors.red,
             rightButtonFn: () {
               setState(() {
                 text = text.substring(0, text.length - 1);
               });
             },
-            rightIcon: Icon(
+            rightButton: Icon(
               Icons.backspace,
               color: Colors.red,
             ),
             leftButtonFn: () {
               print('left button clicked');
             },
-            leftIcon: Icon(
+            leftButton: Icon(
               Icons.check,
               color: Colors.red,
             ),

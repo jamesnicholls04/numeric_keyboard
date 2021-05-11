@@ -6,6 +6,7 @@ typedef KeyboardTapCallback = void Function(String text);
 
 class NumericKeyboard extends StatefulWidget {
   final TextStyle textStyle;
+  final BoxDecoration decoration;
   final EdgeInsets padding;
   final Widget rightButton;
   final Function() rightButtonFn;
@@ -17,6 +18,7 @@ class NumericKeyboard extends StatefulWidget {
   NumericKeyboard(
       {Key key,
       @required this.onKeyboardTap,
+      this.decoration,
       this.padding,
       this.textStyle,
       this.rightButtonFn,
@@ -36,6 +38,7 @@ class _NumericKeyboardState extends State<NumericKeyboard> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      decoration: widget.decoration ?? BoxDecoration(),
       padding: widget.padding ?? EdgeInsets.only(left: 32, right: 32, top: 20),
       alignment: Alignment.center,
       child: Column(

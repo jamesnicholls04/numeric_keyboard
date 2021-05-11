@@ -6,7 +6,7 @@ typedef KeyboardTapCallback = void Function(String text);
 
 class NumericKeyboard extends StatefulWidget {
   final TextStyle textStyle;
-  final Padding padding;
+  final EdgeInsets padding;
   final Widget rightButton;
   final Function() rightButtonFn;
   final Widget leftButton;

@@ -72,6 +72,7 @@ class _NumericKeyboardState extends State<NumericKeyboard> {
             alignment: widget.mainAxisAlignment,
             children: <Widget>[
               BouncingWidget(
+                  opacityReductionFactor: 3,
                   onPressed: widget.leftButtonFn,
                   duration: const Duration(milliseconds: 100),
                   child: Container(
@@ -81,6 +82,7 @@ class _NumericKeyboardState extends State<NumericKeyboard> {
                       child: widget.leftButton)),
               _calcButton('0'),
               BouncingWidget(
+                  opacityReductionFactor: 3,
                   onPressed: widget.rightButtonFn,
                   duration: const Duration(milliseconds: 100),
                   child: Container(
@@ -101,6 +103,7 @@ class _NumericKeyboardState extends State<NumericKeyboard> {
         widget.onKeyboardTap(value);
       },
       duration: const Duration(milliseconds: 100),
+      opacityReductionFactor: 3,
       child: Container(
         alignment: Alignment.center,
         width: 50,

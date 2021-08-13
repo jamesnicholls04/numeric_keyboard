@@ -1,6 +1,5 @@
 library numeric_keyboard;
 
-import 'package:bouncing_widget/bouncing_widget.dart';
 import 'package:flutter/material.dart';
 
 typedef KeyboardTapCallback = void Function(String text);
@@ -96,12 +95,11 @@ class _NumericKeyboardState extends State<NumericKeyboard> {
   }
 
   Widget _calcButton(String value) {
-    return BouncingWidget(
-      onPressed: () {
+    return InkWell(
+      borderRadius: BorderRadius.circular(45),
+      onTap: () {
         widget.onKeyboardTap(value);
       },
-      duration: const Duration(milliseconds: 100),
-      scaleFactor: 0.75,
       child: Container(
         alignment: Alignment.center,
         width: 50,

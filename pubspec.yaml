@@ -7,8 +7,12 @@ environment:
   sdk: ">=2.1.0 <3.0.0"
 
 dependencies:
+
+  bouncing_widget: ^2.0.0
   flutter:
     sdk: flutter
+
+  
 
 dev_dependencies:
   flutter_test:

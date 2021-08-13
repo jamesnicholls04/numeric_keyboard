@@ -71,18 +71,18 @@ class _NumericKeyboardState extends State<NumericKeyboard> {
           ButtonBar(
             alignment: widget.mainAxisAlignment,
             children: <Widget>[
-              InkWell(
-                  borderRadius: BorderRadius.circular(45),
-                  onTap: widget.leftButtonFn,
+              BouncingWidget(
+                  onPressed: widget.leftButtonFn,
+                  duration: const Duration(milliseconds: 100),
                   child: Container(
                       alignment: Alignment.center,
                       width: 50,
                       height: 50,
                       child: widget.leftButton)),
               _calcButton('0'),
-              InkWell(
-                  borderRadius: BorderRadius.circular(45),
-                  onTap: widget.rightButtonFn,
+              BouncingWidget(
+                  onPressed: widget.rightButtonFn,
+                  duration: const Duration(milliseconds: 100),
                   child: Container(
                       alignment: Alignment.center,
                       width: 50,
@@ -101,7 +101,6 @@ class _NumericKeyboardState extends State<NumericKeyboard> {
         widget.onKeyboardTap(value);
       },
       duration: const Duration(milliseconds: 100),
-      
       child: Container(
         alignment: Alignment.center,
         width: 50,

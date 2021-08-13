@@ -77,6 +77,7 @@ class _NumericKeyboardState extends State<NumericKeyboard> {
                   duration: const Duration(milliseconds: 100),
                   child: Container(
                       alignment: Alignment.center,
+                      color: Colors.transparent,
                       width: 50,
                       height: 50,
                       child: widget.leftButton)),
@@ -87,6 +88,7 @@ class _NumericKeyboardState extends State<NumericKeyboard> {
                   duration: const Duration(milliseconds: 100),
                   child: Container(
                       alignment: Alignment.center,
+                      color: Colors.transparent,
                       width: 50,
                       height: 50,
                       child: widget.rightButton))
@@ -106,6 +108,7 @@ class _NumericKeyboardState extends State<NumericKeyboard> {
       opacityReductionFactor: 3,
       child: Container(
         alignment: Alignment.center,
+        color: Colors.transparent,
         width: 50,
         height: 50,
         child: Text(

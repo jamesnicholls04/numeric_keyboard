@@ -101,7 +101,7 @@ class _NumericKeyboardState extends State<NumericKeyboard> {
         widget.onKeyboardTap(value);
       },
       duration: const Duration(milliseconds: 100),
-      scaleFactor: 0.75,
+      
       child: Container(
         alignment: Alignment.center,
         width: 50,

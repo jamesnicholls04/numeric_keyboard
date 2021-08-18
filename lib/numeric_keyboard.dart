@@ -50,7 +50,9 @@ class _NumericKeyboardState extends State<NumericKeyboard> {
             child: Row(
               children: <Widget>[
                 _calcButton('1', 1),
-                _calcButton('2', 3),
+                const Expanded(child: SizedBox()),
+                _calcButton('2', 1),
+                const Expanded(child: SizedBox()),
                 _calcButton('3', 1),
               ],
             ),
@@ -59,7 +61,9 @@ class _NumericKeyboardState extends State<NumericKeyboard> {
             child: Row(
               children: <Widget>[
                 _calcButton('4', 1),
-                _calcButton('5', 3),
+                const Expanded(child: SizedBox()),
+                _calcButton('5', 1),
+                const Expanded(child: SizedBox()),
                 _calcButton('6', 1),
               ],
             ),
@@ -68,7 +72,9 @@ class _NumericKeyboardState extends State<NumericKeyboard> {
             child: Row(
               children: <Widget>[
                 _calcButton('7', 1),
-                _calcButton('8', 3),
+                const Expanded(child: SizedBox()),
+                _calcButton('8', 1),
+                const Expanded(child: SizedBox()),
                 _calcButton('9', 1),
               ],
             ),
@@ -87,7 +93,9 @@ class _NumericKeyboardState extends State<NumericKeyboard> {
                           color: Colors.transparent,
                           child: widget.leftButton)),
                 ),
-                _calcButton('0', 3),
+                const Expanded(child: SizedBox()),
+                _calcButton('0', 1),
+                const Expanded(child: SizedBox()),
                 Expanded(
                   flex: 1,
                   child: BouncingWidget(

@@ -47,16 +47,14 @@ class _NumericKeyboardState extends State<NumericKeyboard> {
       alignment: Alignment.center,
       child: Column(
         children: <Widget>[
-          ButtonBar(
-            alignment: widget.mainAxisAlignment,
+          Row(
             children: <Widget>[
               _calcButton('1'),
               _calcButton('2'),
               _calcButton('3'),
             ],
           ),
-          ButtonBar(
-            alignment: widget.mainAxisAlignment,
+          Row(
             children: <Widget>[
               _calcButton('4'),
               _calcButton('5'),
@@ -71,30 +69,29 @@ class _NumericKeyboardState extends State<NumericKeyboard> {
               _calcButton('9'),
             ],
           ),
-          ButtonBar(
-            alignment: widget.mainAxisAlignment,
+          Row(
             children: <Widget>[
-              BouncingWidget(
-                  opacityReductionFactor: 3,
-                  onPressed: widget.leftButtonFn,
-                  duration: const Duration(milliseconds: 100),
-                  child: Expanded(
+              Expanded(
+                child: BouncingWidget(
+                    opacityReductionFactor: 3,
+                    onPressed: widget.leftButtonFn,
+                    duration: const Duration(milliseconds: 100),
                     child: Container(
                         alignment: Alignment.center,
                         color: Colors.transparent,
-                        child: widget.leftButton),
-                  )),
+                        child: widget.leftButton)),
+              ),
               _calcButton('0'),
-              BouncingWidget(
-                  opacityReductionFactor: 3,
-                  onPressed: widget.rightButtonFn,
-                  duration: const Duration(milliseconds: 100),
-                  child: Expanded(
+              Expanded(
+                child: BouncingWidget(
+                    opacityReductionFactor: 3,
+                    onPressed: widget.rightButtonFn,
+                    duration: const Duration(milliseconds: 100),
                     child: Container(
                         alignment: Alignment.center,
                         color: Colors.transparent,
-                        child: widget.rightButton),
-                  ))
+                        child: widget.rightButton)),
+              )
             ],
           ),
         ],
@@ -103,13 +100,13 @@ class _NumericKeyboardState extends State<NumericKeyboard> {
   }
 
   Widget _calcButton(String value) {
-    return BouncingWidget(
-      onPressed: () {
-        widget.onKeyboardTap(value);
-      },
-      duration: const Duration(milliseconds: 100),
-      opacityReductionFactor: 3,
-      child: Expanded(
+    return Expanded(
+      child: BouncingWidget(
+        onPressed: () {
+          widget.onKeyboardTap(value);
+        },
+        duration: const Duration(milliseconds: 100),
+        opacityReductionFactor: 3,
         child: Container(
           alignment: Alignment.center,
           color: Colors.transparent,

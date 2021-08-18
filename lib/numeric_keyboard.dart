@@ -44,63 +44,72 @@ class _NumericKeyboardState extends State<NumericKeyboard> {
       height: widget.height,
       decoration: widget.decoration ?? BoxDecoration(),
       padding: widget.padding ?? EdgeInsets.only(left: 32, right: 32, top: 20),
-      alignment: Alignment.center,
       child: Column(
         children: <Widget>[
-          Row(
-            children: <Widget>[
-              _calcButton('1'),
-              _calcButton('2'),
-              _calcButton('3'),
-            ],
+          Expanded(
+            child: Row(
+              children: <Widget>[
+                _calcButton('1', 1),
+                _calcButton('2', 2),
+                _calcButton('3', 1),
+              ],
+            ),
           ),
-          Row(
-            children: <Widget>[
-              _calcButton('4'),
-              _calcButton('5'),
-              _calcButton('6'),
-            ],
+          Expanded(
+            child: Row(
+              children: <Widget>[
+                _calcButton('4', 1),
+                _calcButton('5', 2),
+                _calcButton('6', 1),
+              ],
+            ),
           ),
-          ButtonBar(
-            alignment: widget.mainAxisAlignment,
-            children: <Widget>[
-              _calcButton('7'),
-              _calcButton('8'),
-              _calcButton('9'),
-            ],
+          Expanded(
+            child: Row(
+              children: <Widget>[
+                _calcButton('7', 1),
+                _calcButton('8', 2),
+                _calcButton('9', 1),
+              ],
+            ),
           ),
-          Row(
-            children: <Widget>[
-              Expanded(
-                child: BouncingWidget(
-                    opacityReductionFactor: 3,
-                    onPressed: widget.leftButtonFn,
-                    duration: const Duration(milliseconds: 100),
-                    child: Container(
-                        alignment: Alignment.center,
-                        color: Colors.transparent,
-                        child: widget.leftButton)),
-              ),
-              _calcButton('0'),
-              Expanded(
-                child: BouncingWidget(
-                    opacityReductionFactor: 3,
-                    onPressed: widget.rightButtonFn,
-                    duration: const Duration(milliseconds: 100),
-                    child: Container(
-                        alignment: Alignment.center,
-                        color: Colors.transparent,
-                        child: widget.rightButton)),
-              )
-            ],
+          Expanded(
+            child: Row(
+              children: <Widget>[
+                Expanded(
+                  flex: 1,
+                  child: BouncingWidget(
+                      opacityReductionFactor: 3,
+                      onPressed: widget.leftButtonFn,
+                      duration: const Duration(milliseconds: 100),
+                      child: Container(
+                          alignment: Alignment.center,
+                          color: Colors.transparent,
+                          child: widget.leftButton)),
+                ),
+                _calcButton('0', 2),
+                Expanded(
+                  flex: 1,
+                  child: BouncingWidget(
+                      opacityReductionFactor: 3,
+                      onPressed: widget.rightButtonFn,
+                      duration: const Duration(milliseconds: 100),
+                      child: Container(
+                          alignment: Alignment.center,
+                          color: Colors.transparent,
+                          child: widget.rightButton)),
+                )
+              ],
+            ),
           ),
         ],
       ),
     );
   }
 
-  Widget _calcButton(String value) {
+  Widget _calcButton(String value, int flex) {
     return Expanded(
+      flex: flex,
       child: BouncingWidget(
         onPressed: () {
           widget.onKeyboardTap(value);

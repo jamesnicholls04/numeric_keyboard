@@ -13,6 +13,7 @@ class NumericKeyboard extends StatefulWidget {
   final Function() rightButtonFn;
   final Widget leftButton;
   final Function() leftButtonFn;
+  final double height;
   final KeyboardTapCallback onKeyboardTap;
   final MainAxisAlignment mainAxisAlignment;
 
@@ -20,6 +21,7 @@ class NumericKeyboard extends StatefulWidget {
       {Key key,
       @required this.onKeyboardTap,
       this.decoration,
+      this.height = 200,
       this.padding,
       this.textStyle,
       this.rightButtonFn,
@@ -39,6 +41,7 @@ class _NumericKeyboardState extends State<NumericKeyboard> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: widget.height,
       decoration: widget.decoration ?? BoxDecoration(),
       padding: widget.padding ?? EdgeInsets.only(left: 32, right: 32, top: 20),
       alignment: Alignment.center,
@@ -75,23 +78,23 @@ class _NumericKeyboardState extends State<NumericKeyboard> {
                   opacityReductionFactor: 3,
                   onPressed: widget.leftButtonFn,
                   duration: const Duration(milliseconds: 100),
-                  child: Container(
-                      alignment: Alignment.center,
-                      color: Colors.transparent,
-                      width: 50,
-                      height: 50,
-                      child: widget.leftButton)),
+                  child: Expanded(
+                    child: Container(
+                        alignment: Alignment.center,
+                        color: Colors.transparent,
+                        child: widget.leftButton),
+                  )),
               _calcButton('0'),
               BouncingWidget(
                   opacityReductionFactor: 3,
                   onPressed: widget.rightButtonFn,
                   duration: const Duration(milliseconds: 100),
-                  child: Container(
-                      alignment: Alignment.center,
-                      color: Colors.transparent,
-                      width: 50,
-                      height: 50,
-                      child: widget.rightButton))
+                  child: Expanded(
+                    child: Container(
+                        alignment: Alignment.center,
+                        color: Colors.transparent,
+                        child: widget.rightButton),
+                  ))
             ],
           ),
         ],
@@ -106,18 +109,18 @@ class _NumericKeyboardState extends State<NumericKeyboard> {
       },
       duration: const Duration(milliseconds: 100),
       opacityReductionFactor: 3,
-      child: Container(
-        alignment: Alignment.center,
-        color: Colors.transparent,
-        width: 50,
-        height: 50,
-        child: Text(
-          value,
-          style: widget.textStyle ??
-              TextStyle(
-                  fontSize: 26,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black),
+      child: Expanded(
+        child: Container(
+          alignment: Alignment.center,
+          color: Colors.transparent,
+          child: Text(
+            value,
+            style: widget.textStyle ??
+                TextStyle(
+                    fontSize: 26,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black),
+          ),
         ),
       ),
     );

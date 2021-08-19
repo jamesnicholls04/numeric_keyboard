@@ -9,9 +9,8 @@ environment:
 
 dependencies:
 
-  bouncing_widget:
-    git:
-      https://github.com/jamesnicholls04/bouncing_widget
+  bouncing_widget: ^2.0.0
+   
 
   flutter:
     sdk: flutter

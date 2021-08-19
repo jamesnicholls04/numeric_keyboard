@@ -14,9 +14,7 @@ dependencies:
   numeric_keyboard:
     path: ../
 
-  bouncing_widget:
-    git:
-      https://github.com/jamesnicholls04/bouncing_widget
+  bouncing_widget: ^2.0.0
 
   cupertino_icons: ^0.1.3
 

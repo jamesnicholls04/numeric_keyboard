@@ -18,11 +18,9 @@ packages:
   bouncing_widget:
     dependency: "direct main"
     description:
-      path: "."
-      ref: HEAD
-      resolved-ref: abbebc17615412ecc9ef5d8ca410a77ff71711cc
-      url: "https://github.com/jamesnicholls04/bouncing_widget"
-    source: git
+      name: bouncing_widget
+      url: "https://pub.dartlang.org"
+    source: hosted
     version: "2.0.0"
   characters:
     dependency: transitive

@@ -9,22 +9,23 @@ class NumericKeyboard extends StatefulWidget {
   final BoxDecoration decoration;
   final EdgeInsets padding;
   final Widget rightButton;
-  final Function() rightButtonFn;
+  final Function()? rightButtonFn;
   final Widget leftButton;
-  final Function() leftButtonFn;
+  final Function()? leftButtonFn;
   final KeyboardTapCallback onKeyboardTap;
   final MainAxisAlignment mainAxisAlignment;
 
   NumericKeyboard(
-      {Key key,
-      @required this.onKeyboardTap,
-      this.decoration,
-      this.padding,
-      this.textStyle,
+      {Key? key,
+      required this.onKeyboardTap,
+      this.decoration = const BoxDecoration(),
+      this.padding = const EdgeInsets.all(0),
+      this.textStyle = const TextStyle(
+          fontSize: 26, fontWeight: FontWeight.bold, color: Colors.black),
       this.rightButtonFn,
-      this.rightButton,
+      this.rightButton = const Icon(Icons.backspace, color: Colors.red),
       this.leftButtonFn,
-      this.leftButton,
+      this.leftButton = const Icon(Icons.check),
       this.mainAxisAlignment = MainAxisAlignment.spaceEvenly})
       : super(key: key);
 
@@ -38,8 +39,8 @@ class _NumericKeyboardState extends State<NumericKeyboard> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: widget.decoration ?? BoxDecoration(),
-      padding: widget.padding ?? EdgeInsets.only(left: 32, right: 32, top: 20),
+      decoration: widget.decoration,
+      padding: widget.padding,
       alignment: Alignment.center,
       child: Column(
         children: <Widget>[
@@ -106,11 +107,7 @@ class _NumericKeyboardState extends State<NumericKeyboard> {
         height: 50,
         child: Text(
           value,
-          style: widget.textStyle ??
-              TextStyle(
-                  fontSize: 26,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black),
+          style: widget.textStyle,
         ),
       ),
     );

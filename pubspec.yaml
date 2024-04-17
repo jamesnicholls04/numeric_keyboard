@@ -5,13 +5,13 @@ version: 1.0.0
 homepage: https://github.com/huextrat/numeric_keyboard
 
 environment:
-  sdk: ">=2.1.0 <3.0.0"
+  sdk: ">=2.12.0 <4.0.0"
 
 dependencies:
 
   bouncing_widget:
     git:
-      https://github.com/jamesnicholls04/bouncing_widget
+      url: https://github.com/jamesnicholls04/bouncing_widget
 
   flutter:
     sdk: flutter
